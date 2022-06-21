@@ -71,10 +71,8 @@ Training, validation and test data are available in `dataset` folder, which are 
 
 | tweet_id            | labels                                                                                                                                                                                                                                                                                                                           |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| 1423080345067565057 |  "[{'type': 'Organization', 'start_index': 5, 'end_index': 6, 'value': 'NextDoor', 'sentiment': 'Negative'}, {'type': 'Drug', 'start_index': 13, 'end_index': 15, 'value': 'MLM vitamin', 'sentiment': 'Negative'}]",
-|
-| 1278592113878409216 |  ["[{'type': 'Disease', 'start_index': 3, 'end_index': 5, 'value': 'sleep apnea', 'sentiment': 'null'}]"
-|
+| 1423080345067565057 |  "[{'type': 'Organization', 'start_index': 5, 'end_index': 6, 'value': 'NextDoor', 'sentiment': 'Negative'}, {'type': 'Drug', 'start_index': 13, 'end_index': 15, 'value': 'MLM vitamin', 'sentiment': 'Negative'}]"
+| 1278592113878409216 |  "[{'type': 'Disease', 'start_index': 3, 'end_index': 5, 'value': 'sleep apnea', 'sentiment': 'null'}]"
 
 
 
