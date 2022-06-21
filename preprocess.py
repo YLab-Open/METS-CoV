@@ -6,6 +6,8 @@
 # @E-mail  : zhoupl@pku.edu.cn
 import re
 import emoji
+import argparse
+import pandas as pd
 
 def remove_urls(text):
     pattern = "http\S+"
@@ -41,3 +43,18 @@ def preprocess(text):
     text = add_spaces_to_emojis(text)
     text = ' '.join(text.split())
     return text
+def get_params():
+    args = argparse.ArgumentParser()
+    ### I/O ###
+    args.add_argument("--input_path", default='', type=str)
+    args.add_argument("--output_path", default='', type=str)
+
+    args = args.parse_args()
+
+    return args
+
+if __name__ == '__main__':
+    args = get_params()
+    df = pd.read_csv(args.input_path,dtype='str',sep='\t')
+    df['preprocessed_text'] = df['full_text'].apply(preprocess)
+    df.to_csv(args.output_path, index=False)
