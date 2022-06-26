@@ -7,53 +7,35 @@ This repository includes the dataset and benchmark of the paper:
 **Authors**: Peilin Zhou, Zeqiang Wang, Dading Chong, Zhijiang Guo, Yining Hua, Zichang Su, Zhiyang Teng, Jiageng Wu, Jie Yang
 
 
-## Abstract:
-The COVID-19 pandemic continues to bring up various topics discussed or debated on social media. In order to explore the impact of pandemics on people's lives, it is crucial to understand the public's concerns and attitudes towards pandemic-related entities (e.g., drugs, vaccines) on social media. However, models trained on existing named entity recognition (NER) or targeted sentiment analysis (TSA) datasets have limited ability to understand COVID-19-related social media texts because these datasets are not designed or annotated from a medical perspective. In this paper, we release METS-CoV, a dataset containing medical entities and targeted sentiments from COVID-19 related tweets. METS-CoV contains 10,000 tweets with 7 types of entities, including 4 medical entity types (_Disease_, _Drug_, _Symptom_, and _Vaccine_) and 3 general entity types (_Person_, _Location_, and _Organization_). To further investigate tweet users' attitudes toward specific entities, 4 types of entities (_Person_, _Organization_, _Drug_, and _Vaccine_) are selected and annotated with user sentiments, resulting in a targeted sentiment dataset with 9,101 entities (in 5,278 tweets). To the best of our knowledge, METS-CoV is the first dataset to collect medical entities and corresponding sentiments of COVID-19 related tweets. We benchmark the performance of classical machine learning models and state-of-the-art deep learning models on NER and TSA tasks with extensive experiments. Results show that this dataset has vast room for improvement for both NER and TSA tasks. With rich annotations and comprehensive benchmark results, we believe METS-CoV is a fundamental resource for building better medical social media understanding tools and facilitating computational social science research, especially on epidemiological topics. Our data, annotation guidelines, benchmark models, and source code are publicly available [link](https://github.com/YLab-Open/METS-CoV) to ensure reproducibility. 
+## Abstract
+The COVID-19 pandemic continues to bring up various topics discussed or debated on social media. 
+In order to explore the impact of pandemics on people's lives, it is crucial to understand the public's concerns and attitudes towards pandemic-related entities (e.g., drugs, vaccines) on social media. 
+However, models trained on existing named entity recognition (NER) or targeted sentiment analysis (TSA) datasets have limited ability to understand COVID-19-related social media texts because these datasets are not designed or annotated from a medical perspective. 
+In this paper, we release METS-CoV, a dataset containing medical entities and targeted sentiments from COVID-19 related tweets. 
+METS-CoV contains 10,000 tweets with 7 types of entities, including 4 medical entity types (_Disease_, _Drug_, _Symptom_, and _Vaccine_) and 3 general entity types (_Person_, _Location_, and _Organization_). 
+To further investigate tweet users' attitudes toward specific entities, 4 types of entities (_Person_, _Organization_, _Drug_, and _Vaccine_) are selected and annotated with user sentiments, resulting in a targeted sentiment dataset with 9,089 entities (in 5,278 tweets). 
+To the best of our knowledge, METS-CoV is the first dataset to collect medical entities and corresponding sentiments of COVID-19 related tweets. 
+We benchmark the performance of classical machine learning models and state-of-the-art deep learning models on NER and TSA tasks with extensive experiments. 
+Results show that this dataset has vast room for improvement for both NER and TSA tasks. 
+With rich annotations and comprehensive benchmark results, we believe METS-CoV is a fundamental resource for building better medical social media understanding tools and facilitating computational social science research, especially on epidemiological topics. 
+Our data, annotation guidelines, benchmark models, and source code are publicly available [link](https://github.com/YLab-Open/METS-CoV) to ensure reproducibility.
 
 ![avatar](figs/tweet_annotation_sample.png)
 
 ## Dataset
 
-加时间信息。
-Twitter users express their attitudes toward medical entities (e.g., drugs and vaccines) through their Twitter posts.
-In this work, we introduce METS-CoV, the first dataset to include medical entities and targeted sentiments on COVID-19-related tweets. 
+We collect COVID-19 related tweets ranging from February 1, 2020, to September 30, 2021.
+We define 7 entity types based on public health research needs, including 3 general entity types and 4 medical entity types for annotation. 
+In particular, we select 4 entity types for additional sentiment annotation with 3 types of sentiment labels: positive, negative, and neutral. 
+All the annotation work is done using the [YEDDA](https://github.com/jiesutd/YEDDA) annotation platform.
 
 ### Data Statistics
-The figure below shows the distribution of tweet lengths in METS-CoV. Most tweets have lengths between 20 and 60 tokens (split with white spaces). 
+The figure below shows the distribution of tweet lengths in METS-CoV.
+Most tweets have lengths between 20 and 60 tokens (split with white spaces). 
+
 
 ![avatar](figs/data_len_distribution.png)
 
-The table below shows the statistics of the METS-CoV-NER dataset. 10,000 tweets contain 19,057 entities in total, resulting in 1.91 entities per tweet in this dataset. We observe that _Symptom_ entities have the highest frequency. This is an expected result of pre-filtering tweets using symptom-related keywords (Some matched symptom keywords are not real symptom entities in tweets due to the ambiguity of words, that is why the total number of Symptom entities is less than 10,000). Other than _symptoms_, all other 6 entity types have relatively balanced proportions. 
-
-| **Number**       | **Train** | **Dev** | **Test** |
-|------------------|-----------|---------|----------|
-| **Tweets**       | 7,000     | 1,500   | 1,500    |
-| **Tokens**       | 285k      | 59k     | 60k      |
-| **All Entities** | 13,570    | 2,749   | 2,738    |
-| **Person**       | 2,253     | 472     | 487      |
-| **Location**     | 1,371     | 294     | 279      |
-| **Organization** | 1,934     | 396     | 381      |
-| **Disease**      | 1,555     | 301     | 258      |
-| **Drug**         | 1,077     | 262     | 227      |
-| **Symptom**      | 4,223     | 806     | 869      |
-| **Vaccine**      | 1,157     | 218     | 237      |
-
-Table below presents the statistical information of the METS-CoV-TSA dataset, where we observe that neutral sentiment accounts for the highest proportion across all 4 target entities. For the _drug_ entities, users have significantly more positive sentiments than negative sentiments, whereas for the _vaccine_ entities, users have similar positive and negative sentiments.
-
-| Number       |     | Train | Dev | Test |
-|--------------|-----|-------|-----|------|
-| Person       | POS | 260   | 64  | 58   |
-|              | NEU | 1293  | 256 | 240  |
-|              | NEG | 700   | 152 | 189  |
-| Organization | POS | 126   | 24  | 31   |
-|              | NEU | 1346  | 284 | 251  |
-|              | NEG | 462   | 88  | 99   |
-| Drug         | POS | 234   | 85  | 64   |
-|              | NEU | 730   | 147 | 142  |
-|              | NEG | 113   | 30  | 21   |
-| Vaccine      | POS | 112   | 25  | 20   |
-|              | NEU | 913   | 173 | 183  |
-|              | NEG | 132   | 20  | 34   |
 ### Data Access
 Following Twitter's automation rules and data security policy, we can not directly provide the original tweets to dataset consumer. 
 Therefore, the Tweet IDs and corresponding annotations are released to the public. 
@@ -73,7 +55,7 @@ Training, validation and test data are available in `dataset` folder, which are 
 ### Annotation Guidelines
 
 Our annotation guidelines are customized to understand medical-related entities and sentiments better. NER guidelines include rules such as "when the manufacturer name refers to a vaccine in the tweet context, the name should be annotated as a vaccine rather than an organization". Sentiment guidelines include rules such as "when irony appears in an annotation entity, its sentiment should be annotated from the standpoint of the person who posted the tweet". 
-More details can be found in our guidelines (see `annotation guidelines/`).  Both Chinese version and English version are released/
+More details can be found in our guidelines (see `annotation guidelines/`).  Both Chinese version and English version are released.
 
 
 
@@ -103,7 +85,7 @@ The links to the PLM models are here:
 * **[`bert-base-uncased`](https://huggingface.co/bert-base-uncased)**
 * **[`bert-base-cased`](https://huggingface.co/bert-base-cased)**
 * **[`bert-large-uncased`](https://huggingface.co/bert-large-uncased)**
-* **[`bert-large-uncased`](https://huggingface.co/bert-large-uncased)**
+* **[`bert-large-cased`](https://huggingface.co/bert-large-cased)**
 * **[`RoBERTa-base`](https://huggingface.co/roberta-base)**
 * **[`RoBERTa-large`](https://huggingface.co/roberta-large)**
 * **[`BART-base`](https://huggingface.co/facebook/bart-base)**
