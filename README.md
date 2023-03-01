@@ -110,6 +110,20 @@ To reproduce the results of BERT-SPC, depGCN, kumaGCN and dotGCN, please use the
 #### Leaderboard
 We reported the results, namely mean ± std, based on experiments on 5 different random seeds: 22, 32, 42, 52 and 62. Mean is calculated by averaging the performances of different seeds. Std denotes the standard error, which is calculated by dividing the standard deviation of the mean value by the square root of the number of seeds.
 ![avatar](figs/tsa_performance.png)
+
+## Cite
+
+If you use METS-CoV in your paper, please cite our [NeurIPS paper](https://openreview.net/pdf?id=GP1Ncd8nTgn):
+
+@inproceedings{
+  zhou2022metscov,
+  title={{METS}-CoV: A Dataset of Medical Entity and Targeted Sentiment on {COVID}-19 Related Tweets},
+  author={Peilin Zhou and Zeqiang Wang and Dading Chong and Zhijiang Guo and Yining Hua and Zichang Su and Zhiyang Teng and Jiageng Wu and Jie Yang},
+  booktitle={Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+  year={2022},
+  url={https://openreview.net/forum?id=GP1Ncd8nTgn}
+}
+    
 ## Contact
 
 If you have any questions about our dataset or benchmark results, please feel free to contact us!
