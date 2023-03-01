@@ -72,7 +72,7 @@ After downloading the tweets, users need to preprocess the original tweets using
 ### NER
 To reproduce the results of CRF model, users could use the [sklearn-crfsuite](https://sklearn-crfsuite.readthedocs.io/en/latest/).
 
-All the experiments of NN-based and PLM-based NER models are conducted using [NCRF++]().
+All the experiments of NN-based and PLM-based NER models are conducted using [NCRF++](https://github.com/jiesutd/NCRFpp).
 The config files of all these models are available in `NCRFpp_configs/` folder.
 
 Users could check the documentation of NCRF++ to learn how to use these configs to reproduce the  benchmark results.
@@ -115,14 +115,14 @@ We reported the results, namely mean ± std, based on experiments on 5 different
 
 If you use METS-CoV in your paper, please cite our [NeurIPS paper](https://openreview.net/pdf?id=GP1Ncd8nTgn):
 
-@inproceedings{
-  zhou2022metscov,
-  title={{METS}-CoV: A Dataset of Medical Entity and Targeted Sentiment on {COVID}-19 Related Tweets},
-  author={Peilin Zhou and Zeqiang Wang and Dading Chong and Zhijiang Guo and Yining Hua and Zichang Su and Zhiyang Teng and Jiageng Wu and Jie Yang},
-  booktitle={Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
-  year={2022},
-  url={https://openreview.net/forum?id=GP1Ncd8nTgn}
-}
+    @inproceedings{
+      zhou2022metscov,
+      title={{METS}-CoV: A Dataset of Medical Entity and Targeted Sentiment on {COVID}-19 Related Tweets},
+      author={Peilin Zhou and Zeqiang Wang and Dading Chong and Zhijiang Guo and Yining Hua and Zichang Su and Zhiyang Teng and Jiageng Wu and Jie Yang},
+      booktitle={Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+      year={2022},
+      url={https://openreview.net/forum?id=GP1Ncd8nTgn}
+    }
     
 ## Contact
 
