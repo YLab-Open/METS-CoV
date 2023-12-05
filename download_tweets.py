@@ -29,7 +29,7 @@ tweet_summary_dir = "Tweet_Summary/"
 # create a folder to store tweet IDs if not exists
 os.makedirs(tweet_summary_dir, exist_ok=True)
 os.makedirs(tweet_ID_dir, exist_ok=True)
-os.makedirs(hydrated_dir, exist_ok=True)
+os.makedirs(output_dir, exist_ok=True)
 
 ## define months to study
 data_month_dict = {   
